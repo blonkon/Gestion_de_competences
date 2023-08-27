@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'idonko';
+  nom : string = "Ibrahim";
+  profile_message : string = "Salut Mr."+this.nom+" Guindo ";
 }
