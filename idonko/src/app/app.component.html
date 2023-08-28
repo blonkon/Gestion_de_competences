@@ -7,13 +7,38 @@
 </head>
 <body>
   <main class="container-fluid">
-    <header class="row mx-1 my-4 me-md-5 ms-md-3">
-      <section class="col-4 text-start">
+    <header class="row mx-1 my-4 me-md-5 ms-md-3 align-items-center ">
+      <section class="col-4  text-start">
         <img src="../assets/logo.png" alt="Logo">
       </section>
-      <section class="col-4 text-center" >Search bar </section>
-      <section class="col-4 text-end">Profile</section>
+      <section class="col-6 col-md-4 d-flex justify-content-center">
+        <form action="" id="searchForm" style="width: 60%;">
+          <div class="input-group " style="background-color: #D9D9D9;border-radius: 50px;">
+            <input type="search" placeholder="Programmation, Securite cloud" class="form-control border-0" style="background-color: #D9D9D9; border-radius: 50px;">
+            <button class="btn" style="background-color:#7D4FFE; border-radius: 50px ;">
+              <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.6736 21.8907L18.9998 17.0276C18.7889 16.8081 18.5029 16.6861 18.2029 16.6861H17.4388C18.7326 14.9643 19.5014 12.7986 19.5014 10.4426C19.5014 4.83807 15.137 0.296875 9.75071 0.296875C4.36438 0.296875 0 4.83807 0 10.4426C0 16.0472 4.36438 20.5884 9.75071 20.5884C12.0149 20.5884 14.0963 19.7884 15.7512 18.4421V19.2372C15.7512 19.5494 15.8683 19.8469 16.0793 20.0664L20.7531 24.9296C21.1937 25.3881 21.9063 25.3881 22.3423 24.9296L23.6689 23.5492C24.1096 23.0906 24.1096 22.3492 23.6736 21.8907ZM9.75071 16.6861C6.43641 16.6861 3.75027 13.8961 3.75027 10.4426C3.75027 6.99404 6.43172 4.19908 9.75071 4.19908C13.065 4.19908 15.7512 6.98916 15.7512 10.4426C15.7512 13.8912 13.0697 16.6861 9.75071 16.6861Z" fill="white"/>
+                </svg>
+            </button>
+          </div>
+        </form>  
+      </section>
+      <section class="col-2 col-md-4 text-end">
+        <span class="me-3 d-none d-lg-inline-block" style="">{{profile_message}}</span>
+        <img src="../assets/profile.png" alt="profile" style="border-radius: 50%;width: 50px;height: 50px;" class="">
+      </section>
     </header>
   </main>
+  <div style="height: fit-content; background-color: #7D4FFE; flex-direction:column;">
+    <nav style="height: fit-content; background-color: #7D4FFE; flex-direction:column;">
+      <ul>
+        <li>Lorem, ipsum.</li>
+        <li>Pariatur, molestiae?</li>
+        <li>Nemo, voluptas?</li>
+        <li>Mollitia, magni?</li>
+        <li>Earum, similique.</li>
+      </ul>
+    </nav>
+  </div>
 </body>
 </html>
