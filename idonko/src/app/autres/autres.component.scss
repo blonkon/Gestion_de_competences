@@ -1,0 +1,91 @@
+.catbox{
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    padding: 0px;
+    height: 70vh;
+    overflow: scroll;
+    scrollbar-color: #232324;
+}
+.catbox > li{
+    padding-left: 5%;
+    font-family: 'Lato';
+    font-weight: bold;
+}
+.h4{
+    text-align: center;
+    color: #7D4FFE;
+    padding-top: 2%;
+    margin-top: 0px;
+    transition: font-size 0.3s ease-out;
+}
+hr{
+    margin: 0px;
+    padding: 0px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    height: 2px;
+    border: none;
+    background-color: #4d0cff;
+    transition: width 0.5s ease-out;
+}
+.h4 > hr{
+    margin-left: 5%;
+    width: 80%;
+}
+.hr{
+    width: 80%;
+}
+.h4:hover{
+        color: white;
+        font-size: 1.75rem;
+    .hr2{
+        width: 50%;
+    }
+
+}
+.catbox > li:hover{
+    color: white;
+    .hr{
+        width: 50%;
+    }
+}
+.cards{
+    background-color: #d9d9d9;
+    width: 32%;
+    border-radius: 20px;
+    margin-bottom: 2%;
+}
+.cards > h6{
+    font-family: 'Lexend';
+    font-weight: bolder;
+    padding-left: 10%;
+    padding-top: 4%;
+    font-size: 22px;
+}
+.cardsdiv{
+    margin: 2%;
+}
+.cardsdiv > p ,.p {
+    font-family: 'Lexend';
+    font-weight: bolder;
+    font-size: 32px;
+    color: #7D4FFE;
+}
+//spinners
+.p > p {
+    font-weight: 300;
+    font-size: 16px;
+    color: #000;
+    margin-top: 30%;
+    text-align: center;
+}
+
+.custom-size {
+    width: 64px;
+    height: 64px;
+    color: #000;
+}
+//cards slider
+.carousel{
+    background-color: #000;
+}

@@ -1,1 +1,73 @@
-<p>autres works!</p>
+<div class="d-flex justify-content-around">
+    <div class="competence col-8">
+        <div class="d-flex justify-content-between">
+            <div class="col-3 cards">
+                <h6>Membres Total</h6>
+                <div class="d-flex justify-content-around cardsdiv align-items-center">
+                    <img src="../../assets/membretotal.png" alt="">
+                    <p >77OK</p>
+                </div>
+            </div>
+            <div class="col-3 cards">
+                <h6>Developpement</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    <img src="../../assets/developpement.png" alt="">
+                    <div class="p d-flex align-items-center justify-content-center"> 
+                        <igx-circular-bar
+                        [value]="66"
+                        [animate]="true"
+                        class="custom-size"
+                    ></igx-circular-bar>
+                     </div>
+                </div>
+            </div>
+            <div class="col-3 cards">
+                <h6>Infrastructure</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    <img src="../../assets/infras.png" alt="">
+                        <div class="p d-flex align-items-center justify-content-center"> 
+                            <igx-circular-bar
+                            [value]="34"
+                            [animate]="true"
+                            class="custom-size"
+                        ></igx-circular-bar>
+                        
+                           <div class="overlay"></div> 
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <igx-carousel class="carousel">
+                <igx-slide class="d-flex justify-content-between">
+                  <div class="cards m-3">
+                    lo
+                  </div>
+                  <div class="cards m-3">
+                    lo
+                  </div>
+                  <div class="cards m-3">
+                    lo
+                  </div>
+                </igx-slide>
+                <igx-slide class="d-flex justify-content-between">
+                    <div class="cards m-3">
+                        lo
+                      </div>
+                      <div class="cards m-3">
+                        lo
+                      </div>
+                      <div class="cards m-3">
+                        lo
+                      </div>
+                </igx-slide>
+              </igx-carousel>
+        </div>
+    </div>
+    <div class="categorie col-3">
+        <ol class="catbox">
+            <h4 class="h4">Categorie<hr class="hr2"></h4>
+                <li *ngFor="let element of categories">{{ element }}<hr class="hr"></li>
+        </ol>
+    </div>
+</div>
