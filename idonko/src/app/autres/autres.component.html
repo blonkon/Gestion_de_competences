@@ -39,29 +39,23 @@
         </div>
         <div>
             <igx-carousel class="carousel">
-                <igx-slide class="d-flex justify-content-between">
-                  <div class="cards m-3">
-                    lo
-                  </div>
-                  <div class="cards m-3">
-                    lo
-                  </div>
-                  <div class="cards m-3">
-                    lo
-                  </div>
-                </igx-slide>
-                <igx-slide class="d-flex justify-content-between">
-                    <div class="cards m-3">
-                        lo
+                <ng-container *ngFor="let slideData of carouselData">
+                  <igx-slide class="d-flex justify-content-between">
+                    <div *ngFor="let cardData of slideData" class="cards m-3" (click)="navigateToPage()" style="cursor: pointer;">
+                      <div>
+                        <div class="d-flex justify-content-center align-items-center p-3 cards_other">
+                          <img [src]="cardData.img" alt="" style="height: 64px; width: 64px; border-radius: 50%;">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                          <h4>{{ cardData.name }}</h4>
+                          <p>{{ cardData.role }}</p>
+                        </div>
                       </div>
-                      <div class="cards m-3">
-                        lo
-                      </div>
-                      <div class="cards m-3">
-                        lo
-                      </div>
-                </igx-slide>
+                    </div>
+                  </igx-slide>
+                </ng-container>
               </igx-carousel>
+              
         </div>
     </div>
     <div class="categorie col-3">
