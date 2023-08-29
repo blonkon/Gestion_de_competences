@@ -1,1 +1,10 @@
-
+/* You can add global styles to this file, and also import other style files */
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700&family=Inter&family=Lato:wght@700&family=Lexend:wght@300&display=swap');
+ul, ol {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Pour supprimer les puces/balises numérotées par défaut */
+  }
+p{
+    font-family: 'Lexend','Lato';
+}

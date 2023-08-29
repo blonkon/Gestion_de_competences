@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import{MatDialog} from '@angular/material/dialog';
+import { PopAjoutCompComponent } from '../pop-ajout-comp/pop-ajout-comp.component';
+
 
 @Component({
   selector: 'app-user-profile',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent {
+  constructor(private dialogRef: MatDialog){}
 
+  openDialog(){
+    this.dialogRef.open(PopAjoutCompComponent);
+  }
 }

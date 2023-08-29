@@ -17,7 +17,7 @@
                       </div>
                       
                     <div class="mb-3">
-                        <input placeholder="Prenom" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                        <input  placeholder="Prenom" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                       </div>
                 </div>
                 
@@ -31,7 +31,7 @@
                       </div>
                 </div>
                 <div class="row3">
-                    <button type="submit" class="btn btn-primary">Modifier mes coordonnées</button>
+                    <button type="submit"  class="btn btn-primary">Modifier mes coordonnées</button>
                 </div>
               </form>
         </div>
@@ -42,52 +42,53 @@
         <div class="skills">
             <h2>Mes Compétences</h2>
         </div>
-        <div class="list-comp">
+        <div class="form">
+           <div class="list-comp">
             <ul class="list-group">
-                <li class="list-group-item">Programmation java</li>
-                <li class="list-group-item">HTML/CSS</li>
-                <li class="list-group-item">JavaScript</li>
-                <li class="list-group-item">Spring Boot</li>
-                <li class="list-group-item">Base de données</li>
-                <li class="list-group-item">Figma</li>
-                <li class="list-group-item">Angular</li>
-                <li class="list-group-item">Framework React</li>
-              </ul>
+                <li>Programmation java</li>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+                <li>Spring Boot</li>
+                <li>Base de données</li>
+                <li>Figma</li>
+                <li>Angular</li>
+                <li>Framework React</li>
+             </ul>
         </div>
-        <div class="progress">
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar w-75"></div>
-              </div>
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar w-75"></div>
-              </div>
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar w-75"></div>
-              </div>
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar w-75"></div>
-              </div>
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar w-75"></div>
-              </div>
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar w-75"></div>
-              </div>
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar w-75"></div>
-              </div>
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar w-75"></div>
-              </div>
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar w-75"></div>
-              </div>
-        
+        <div class="list-progres">
+          <div class="barre-progress">
+            <div class="progress" style="width: 80%;"></div>
+          </div>
+          <div class="barre-progress">
+            <div class="progress" style="width: 70%;"></div>
+          </div>
+          <div class="barre-progress">
+            <div class="progress" style="width: 65%;"></div>
+          </div>
+          <div class="barre-progress">
+            <div class="progress" style="width: 85;"></div>
+          </div>
+          <div class="barre-progress">
+            <div class="progress" style="width: 50%;"></div>
+          </div>
+          <div class="barre-progress">
+            <div class="progress"style="width: 60;"></div>
+          </div>
+          <div class="barre-progress">
+            <div class="progress"style="width: 85%;"></div>
+          </div>
+          <div class="barre-progress">
+            <div class="progress" style="width: 75%;"></div>
+          </div>
         </div>
-            <div class="row3">
-                <button type="submit" class="btn btn-primary">Ajouter une compétence</button>
-            </div>
-    
+        </div>
+
+        <div class="ajout">
+            <button (click)="openDialog()" type="submit">Ajouter une compétence</button>
+        </div>
+       
+       
+       
         
     </div>
 </div>

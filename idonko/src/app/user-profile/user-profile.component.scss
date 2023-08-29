@@ -7,14 +7,14 @@ align-items: center;
 background: #d9d9d9;
 width: 500px;
 height: 700px;
-margin-left: 150px;
+margin-left: 30px;
 border-radius: 50px;
-margin-right: 90px;
+margin-right: 35px;
 }
 .Profile{
 box-sizing: border-box;
 img{
- border-radius: 50%;
+border-radius: 50%;
 width: 185px;
 height: 185px;
 margin-left: 20px;
@@ -29,7 +29,7 @@ margin-top: 10px;
        
 }
 .title{
-    margin-top: -30px;
+    margin-top: -15px;
 }
 .userform{
     display: flex;
@@ -38,7 +38,8 @@ margin-top: 10px;
 .row1{
     display: flex;
     flex-direction: row;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 .row1 div{
     display: flex;
@@ -62,10 +63,13 @@ margin-top: 10px;
     justify-content: center;
     margin-top: 45px;
 }
+.Profile{
+    position: relative;
+}
 .icon-camera{
     position: absolute;
-    top:27%;
-    left: 35%;
+    top:70%;
+    right: 5%;
     color:#7d4ffe;
     transform: scale(1.5);
 }
@@ -105,23 +109,52 @@ border-radius: 50px;
     text-align: center;
     font-size: 30px;
     font-family: 'Lato', sans-serif;
+    margin-top: 10px;
 }
-.list-comp{
-    justify-content:space-between ;
-}
+
 .list-group{
     list-style: none;
     font-family: 'Lato';
     font-size: 24px;
-}
-.progress{
-    width: auto;
-    height: 10px;
-    background-color: blue;
-    display: flex;
-    flex-direction: column;
+   margin: 10px;
+   padding: 15px;
 }
 .principal{
     display: flex;
     flex-direction: row;
+}
+
+.list-progres{
+    display: grid;
+    float: right;
+    margin: 10px;
+    padding: 15px;
+
+}
+
+.form{
+    display: flex;
+    justify-content:space-between ;
+}
+
+.barre-progress {
+    background-color: #f0f0f0;
+    height: 10px;
+    width: 150px;
+    border-radius: 25px;
+    margin-top: 10px;
+  }
+.progress {
+  height: 100%;
+  width: 50%; /* Ajustez le pourcentage pour la progression */
+  background-color: #7d4ffe; /* Couleur de la barre de progression */
+  border-radius: 25px;
+}
+
+.ajout{
+    display: flex;
+    flex-direction: column;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-top: 50px;
 }
