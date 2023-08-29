@@ -1,2 +1,33 @@
-<p>pop-ajout-comp works!</p>
+<div class="contenair">
+    <div mat-dialog-title>
+        AJOUT COMPETENCE
+    </div>
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Nom de la compétence</mat-label>
+                <input matInput type="text" placeholder="Entrer votre compétence">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Niveau de la compétence</mat-label>
+                <select matNativeControl required>
+                        <option value="Niveau Junior">Niveau Junior</option>
+                        <option value="Niveau Intermediaire">Niveau Intermediaire</option>
+                        <option value="Niveau Senior">Niveau Senior</option>
+                        <option value="Niveau Expert">Niveau Lead</option>
+                  </select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Objectif de la compétence</mat-label>
+                <input matInput type="text" placeholder="Entrer votre objectif">
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button>Enregistrer</button>
+        <button mat-raised-button>Annuler</button>
+    </div>
+</div>
+
 

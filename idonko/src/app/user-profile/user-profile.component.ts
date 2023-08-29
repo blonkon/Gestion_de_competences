@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import{MatDialog} from '@angular/material/dialog';
-import { PopAjoutCompComponent } from '../pop-ajout-comp/pop-ajout-comp.component';
+import {PopAjoutCompComponent} from '../pop-ajout-comp/pop-ajout-comp.component';
 
 
 @Component({
@@ -9,9 +9,20 @@ import { PopAjoutCompComponent } from '../pop-ajout-comp/pop-ajout-comp.componen
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent {
-  constructor(private dialogRef: MatDialog){}
-
-  openDialog(){
-    this.dialogRef.open(PopAjoutCompComponent);
+  constructor(private matDialog:MatDialog){}
+  openAdd(){
+    this.matDialog.open(PopAjoutCompComponent);
+  }
+  diss : string = 'display: none;'
+  state : boolean = false;
+  onclickpopup(){
+    if (this.state===false) {
+      this.diss = 'display: block;';
+      this.state=true;
+    }else{
+      this.diss = 'display: none;';
+      this.state=false;
+    }
+   
   }
 }
