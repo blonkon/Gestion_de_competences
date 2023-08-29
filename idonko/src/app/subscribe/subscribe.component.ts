@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-subscribe',
@@ -6,12 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./subscribe.component.scss']
 })
 export class SubscribeComponent {
-  nom : string="";
+  nom ='';
   prenom :string="";
   email :string="";
   password:string="";
-  nomy : string="";
-  adduser(){
-    this.nomy = this.nom;
+  adduser(form : NgForm){
+    const nomy  = this.nom;
+    console.log(nomy);
   }
 }
