@@ -9,7 +9,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-      
+ 
   }
   title = 'idonko';
   nom : string = "Ibrahim";

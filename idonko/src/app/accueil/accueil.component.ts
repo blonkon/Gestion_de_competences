@@ -17,6 +17,7 @@ export class AccueilComponent {
   ngOnInit() {
     this.changeContent(); // Démarre immédiatement lors du chargement
     setInterval(() => this.changeContent(), 8000); // Change le contenu toutes les 8s
+    
   }
 
   changeContent() {

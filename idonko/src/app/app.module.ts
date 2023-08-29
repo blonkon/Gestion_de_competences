@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -20,6 +19,10 @@ import{MatFormFieldModule} from '@angular/material/form-field';
 import{MatInputModule} from '@angular/material/input';
 import{MatDialogModule} from '@angular/material/dialog';
 import { PopAjoutCompComponent } from './pop-ajout-comp/pop-ajout-comp.component';
+import { Categories } from './models/categories';
+import {CardsData} from './models/CardsData';
+import { LoginComponent } from './login/login.component';
+import { SubscribeComponent } from './subscribe/subscribe.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { PopAjoutCompComponent } from './pop-ajout-comp/pop-ajout-comp.component
     UserProfileComponent,
     AccueilComponent,
     AutresComponent,
-    PopAjoutCompComponent
+    PopAjoutCompComponent,
+    LoginComponent,
+    SubscribeComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,9 +48,10 @@ import { PopAjoutCompComponent } from './pop-ajout-comp/pop-ajout-comp.component
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,Categories,CardsData]
 })
 export class AppModule {
 }

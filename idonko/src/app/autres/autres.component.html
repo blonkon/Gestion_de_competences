@@ -61,7 +61,7 @@
     <div class="categorie col-3">
         <ol class="catbox">
             <h4 class="h4">Categorie<hr class="hr2"></h4>
-                <li *ngFor="let element of categories">{{ element }}<hr class="hr"></li>
+                <li *ngFor="let element of categories" style="cursor: pointer;" (click)="onclick5(element.id)" [id]="element.id">{{ element.name }}<hr class="hr"></li>
         </ol>
     </div>
 </div>
