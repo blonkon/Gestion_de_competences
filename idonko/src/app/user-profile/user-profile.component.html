@@ -1,5 +1,4 @@
-
-
+<!-- Conteneur principal -->
 <div class="principal">
     <div class="container1">
         <div class="Profile">
@@ -30,15 +29,16 @@
                       </div>
                 </div>
                 <div class="row3">
-                    <button type="submit">Modifier mes coordonnées</button>
+                    <button class="bouton_modif"data-bs-toggle="modal" data-bs-target="#exampleModal2" type="submit">Modifier mes coordonnées</button>
                 </div>
 
         </div>
     </div>
-    
-    <div class="container2">
+
+
+<div class="container2">
         <div class="skills">
-            <h2>Mes Compétences</h2>
+          <h2>Mes Compétences</h2>
         </div>
         <div class="form">
            <div class="list-comp">
@@ -53,6 +53,8 @@
                 <li>Framework React</li>
              </ul>
         </div>
+
+
         <div class="list-progres">
           <div class="barre-progress">
             <div class="progress" style="width: 80%;"></div>
@@ -79,45 +81,78 @@
             <div class="progress" style="width: 75%;"></div>
           </div>
         </div>
-        </div>
+      </div>
 
         <div class="ajout">
-            <button type="submit" (click)="onclickpopup()">Ajouter une compétence</button>
+          <button class="bouton_ajout" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter une compétence</button>
         </div>
-       
-       <div class="popup" [style]="diss">
-          <div class="mb-3">
-            <div class="form-container">
-              <h2>Ajouter une Compétence</h2>
-              <form id="skill-form">
-                <div class="form-group">
-                  <label for="nom">Nom de la compétence:</label>
-                  <input type="text" id="nom" name="nom" required>
-                </div>
-                <div class="form-group">
-                  <label for="niveau">Niveau:</label>
-                  <select id="niveau" name="niveau" required>
-                    <option value="débutant">Débutant</option>
-                    <option value="intermédiaire">Intermédiaire</option>
-                    <option value="avancé">Avancé</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="objectif">Objectif:</label>
-                  <input type="text" id="objectif" name="objectif" required>
-                </div>
-
-                <div class="btn">
-                  <button type="submit" class="btn btnqs btn1" (click)="onclickpopup()">Enregistrer</button>
-                  <button type="submit" class="btn btnqs btb2" (click)="onclickpopup()">Annuler</button>
-                </div>
-               
-              </form>
-            </div>
-          
-       </div>
-       
-        
     </div>
 </div>
 
+<!-- Modal Pour l'ajout de compétenance -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text costum text align" id="exampleModalLabel">AJOUTER UNE COMPETENCE</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="was-validated">
+          <div class="mb-3 mt-3">
+            <input type="text" class="form-control" id="uname" placeholder="Entrer votre compétence" name="uname" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Veuillez remplir le champ.</div>
+          </div>
+          <div class="mb-3">
+            <select class="form-select mt-3">
+              <option disabled selected value="">Veuillez choisir votre niveau</option>
+              <option>Niveau débutant</option>
+              <option>Niveau Intermédiare</option>
+              <option>Niveau Senior</option>
+              <option>Niveau Lead</option>
+            </select>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Veuillez remplir le champ</div>
+          </div>
+          <button class="btnsave"  type="submit">Enregistrer</button>
+          <button class="btncancel" data-bs-dismiss="modal"type="submit">Annuler</button>
+        </form>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal la modifiaction des données personnelles -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="th5">Modifications personnelles</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div>
+        <form>
+          <div class="d-flex">
+            <div class="flex1">
+              <input type="email" placeholder="Enter email">
+              <input type="password" placeholder="Password">
+            </div>
+          </div>
+
+          <div class="d-flex">
+            <div class="flex2">
+              <input type="password" placeholder="Password">
+              <input type="password" placeholder="Password">
+            </div>
+          </div>
+          <div class="bb">
+            <button type="button" class="save">Enregistrer</button>
+            <button type="button" class="delete">Supprimer</button>
+          </div>
+           
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

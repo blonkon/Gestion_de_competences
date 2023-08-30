@@ -1,33 +1,17 @@
-<div class="contenair">
-    <div mat-dialog-title>
-        AJOUT COMPETENCE
+<div id="id01" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <header class="container">
+        <a href="#" class="closebtn">×</a>
+        <h2>Modal Header</h2>
+      </header>
+      <div class="container">
+        <p>Some text in the modal.</p>
+        <p>Some text in the modal.</p>
+      </div>
+      <footer class="container">
+        <p>Modal footer</p>
+      </footer>
     </div>
-    <div mat-dialog-content class="content">
-        <div class="row">
-            <mat-form-field appearance="outline">
-                <mat-label>Nom de la compétence</mat-label>
-                <input matInput type="text" placeholder="Entrer votre compétence">
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Niveau de la compétence</mat-label>
-                <select matNativeControl required>
-                        <option value="Niveau Junior">Niveau Junior</option>
-                        <option value="Niveau Intermediaire">Niveau Intermediaire</option>
-                        <option value="Niveau Senior">Niveau Senior</option>
-                        <option value="Niveau Expert">Niveau Lead</option>
-                  </select>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Objectif de la compétence</mat-label>
-                <input matInput type="text" placeholder="Entrer votre objectif">
-            </mat-form-field>
-        </div>
-    </div>
-    <div mat-dialog-actions>
-        <button mat-raised-button>Enregistrer</button>
-        <button mat-raised-button>Annuler</button>
-    </div>
+  </div>
 </div>
-
-

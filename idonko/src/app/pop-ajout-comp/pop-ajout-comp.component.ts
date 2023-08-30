@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pop-ajout-comp',
@@ -6,5 +7,4 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pop-ajout-comp.component.scss']
 })
 export class PopAjoutCompComponent {
-  
 }
