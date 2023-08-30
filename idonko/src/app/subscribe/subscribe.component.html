@@ -1,4 +1,4 @@
-<form (ngSubmit)="adduser(f)" #f="ngForm">
+
 <div class="container">
     <div class="design">
         <div class="pill-1 rotate-45"></div>
@@ -6,26 +6,42 @@
         <div class="pill-3 rotate-45"></div>
         <div class="pill-4 rotate-45"></div>
     </div>
+    
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        
     <div class="login">
+        <p style="color: red;">{{invalid}}</p>
         <h5 class="title">Subscribe !!</h5>
         <div class="text-input">
             <i class="ri-user-fill"></i>
-            <input type="text" placeholder="Nom" [(ngModel)]="nom">
+            <input type="text" name="nom"  #myInput="ngModel" placeholder="Nom" [(ngModel)]="addnom" (ngModelChange)="onNameChange()">
         </div>
         <div class="text-input">
             <i class="ri-user-fill"></i>
-            <input type="text" placeholder="Prenom" [(ngModel)]="prenom">
+            <input type="text" name="prenom" placeholder="Prenom" [(ngModel)]="addprenom" (ngModelChange)="onPrenameChange()">
         </div>
         <div class="text-input">
             <i class="ri-user-fill"></i>
-            <input type="text" placeholder="Email" [(ngModel)]="email">
+            <input type="number" name="tel" placeholder="Telephone" [(ngModel)]="addtel" (ngModelChange)="onTelChange()">
+        </div>
+        <div class="text-input">
+            <i class="ri-user-fill"></i>
+            <input type="text" name="email" placeholder="Email" [(ngModel)]="addemail" (ngModelChange)="onEmailChange()">
         </div>
         <div class="text-input">
             <i class="ri-lock-fill"></i>
-            <input type="password" placeholder="Mot de passe" [(ngModel)]="password">
+            <input type="password" name="password" placeholder="Mot de passe" [(ngModel)]="addpassword" (ngModelChange)="onPasswordChange()">
         </div>
-        <button class="login-btn" type="submit" >Subscribe</button>
-        
+        <div class="selectandinput" >
+            <i class="ri-lock-fill"></i>
+            <input type="text" name="fonction" placeholder="Votre fonction" [(ngModel)]="addselffonction" >
+            <select name="selectfonction" [(ngModel)]="addfonction">
+                    <option value="-1" selected></option>
+                    <option *ngFor="let option of categories" [value]="option.id">{{ option.name }}</option>
+            </select>
+            
+        </div>
+        <button class="login-btn" type="submit" [ngStyle]="{'display' : validname  && validprename && validemail && validtel && validpassword ? 'inline' : 'none'}" >Subscribe</button>
     </div>
-</div>
 </form>
+</div>

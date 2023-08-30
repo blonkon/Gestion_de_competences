@@ -1,7 +1,7 @@
 
 .container {
     width: 50vw;
-    height: 60vh;
+    height: 90vh;
     display: grid;
     grid-template-columns: 100%;
     grid-template-areas: "login";
@@ -67,15 +67,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
     background: white;
 }
-
-.login h3 {
-    margin: 15px 0;
+.title{
+    margin-top: 15%;
 }
-
 .text-input {
     background: #e6e6e6;
     height: 40px;
@@ -93,7 +91,6 @@
     outline: none;
     width: 100%;
     height: 100%;
-    margin-left: 10px;
 }
 
 .text-input i {
@@ -139,4 +136,31 @@ a.forgot {
     .design {
         display: block;
     }
+}
+.selectandinput{
+    display: flex;
+    height: 40px;
+    width: 60%;
+    padding: 0px;
+    margin: 5px 0;
+}
+.selectandinput > input{
+    border: none;
+    outline: none;
+    background: #e6e6e6;
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%;
+    margin-right: 10px;
+}
+.selectandinput > select {
+    background-color: #7d4ffe;
+    color: #e6e6e6;
+    font-family: 'Inter';
+    border: none;
+    outline: none;
+    width: 20%;
+    margin-top: 5px;
+    height: 30px;
+    border-radius: 5px;
 }

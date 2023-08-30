@@ -4,5 +4,7 @@ export class user{
     prenom!:string;
     email!: string;
     telephone!: number;
-    listCompétence!: any[];
+    fonction!:string;
+    id_categorie!:number;
+    
 }
