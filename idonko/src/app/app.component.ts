@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { PopAjoutCompComponent } from './pop-ajout-comp/pop-ajout-comp.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import {MatDialog} from '@angular/material/dialog'
 
 @Component({
   selector: 'app-root',
@@ -13,6 +10,5 @@ export class AppComponent{
   nom : string = "Ibrahim";
   profile_message : string = "Salut Mr."+this.nom+" Guindo ";
   profileImg : string = "../assets/profile.png";
-
 }
 
