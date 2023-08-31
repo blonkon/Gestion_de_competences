@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import{MatDialog} from '@angular/material/dialog';
-import { PopAjoutCompComponent } from '../pop-ajout-comp/pop-ajout-comp.component';
+import { user } from '../models/user';
+import { competence } from '../models/competence';
 
 
 @Component({
@@ -8,10 +9,76 @@ import { PopAjoutCompComponent } from '../pop-ajout-comp/pop-ajout-comp.componen
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
-export class UserProfileComponent {
-  constructor(private dialogRef: MatDialog){}
+export class UserProfileComponent implements OnInit{
+  comp1: competence[] = [];
+  user1: user[]=[];
+  nouvelleCompetence: any;
 
-  openDialog(){
-    this.dialogRef.open(PopAjoutCompComponent);
+  constructor(){
+
   }
+
+  ngOnInit(): void {
+    this.comp1=[
+      { id:1, nom: 'Compétence 1', niveau: 20},
+      { id:2, nom: 'Compétence 1', niveau: 30},
+      { id:3, nom: 'Compétence 1', niveau: 40},
+      { id:4, nom: 'Compétence 1', niveau: 50},
+      { id:5, nom: 'Compétence 1', niveau: 60},
+      { id:6, nom: 'Compétence 1', niveau: 75},
+      { id:7, nom: 'Compétence 1', niveau: 77},
+      { id:8, nom: 'Compétence 1', niveau: 20},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+      { id:9, nom: 'Compétence 1', niveau: 80},
+    ];
+    this.user1=[
+      {
+      id:1, 
+      nom:'Guindo', 
+      prenom:'Ibrahima', 
+      email:'ib@gmail.com', 
+      telephone: 94410809,
+      fonction:'Développeur full stack',
+      password :'',
+      id_categorie :1,
+      img : '',
+    }
+  ]
+  }
+
+  // ajouterCompetence(competence: competence): void {
+  //   if(competence.nom && competence.niveau){
+  //     const nouvelId = this.comp1.length+1;
+  //     const nouvelleCompetence : competence = {
+  //       nom: competence.nom,
+  //       niveau: competence.niveau,
+  //       id: nouvelId,
+  //     };
+  //    this.comp1.push(nouvelleCompetence);
+  //   }
+  // }
+  ajouterCompetence(): void {
+    if(this.nouvelleCompetence.nom && this.nouvelleCompetence.niveau){
+      const nouvelId = this.comp1.length+1;
+      const nouvelleCompetence : competence = {
+        nom: this.nouvelleCompetence.nom,
+        niveau: this.nouvelleCompetence.niveau,
+        id: nouvelId,
+      };
+     this.comp1.push(nouvelleCompetence);
+     this.nouvelleCompetence = {id:0, nom:'', niveau:''};
+    }
+  }
+
 }

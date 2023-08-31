@@ -18,19 +18,17 @@ import{MatIconModule} from '@angular/material/icon';
 import{MatFormFieldModule} from '@angular/material/form-field';
 import{MatInputModule} from '@angular/material/input';
 import{MatDialogModule} from '@angular/material/dialog';
-import { PopAjoutCompComponent } from './pop-ajout-comp/pop-ajout-comp.component';
 import { Categories } from './models/categories';
 import {CardsData} from './models/CardsData';
 import { LoginComponent } from './login/login.component';
 import { SubscribeComponent } from './subscribe/subscribe.component'
-
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
     AccueilComponent,
     AutresComponent,
-    PopAjoutCompComponent,
     LoginComponent,
     SubscribeComponent,
   ],

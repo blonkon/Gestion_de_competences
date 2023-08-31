@@ -1,9 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
-import { PopAjoutCompComponent } from './pop-ajout-comp/pop-ajout-comp.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LocalstorageService } from './localstorage.service';
 import { Router } from '@angular/router';
 import { user } from './models/user';
+
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,24 @@ import { user } from './models/user';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  bienvenue! : string;
+  bienvenue : string;
+  image :string='assets/';
+  user : user={
+    id:0,
+    nom:'',
+    prenom:'',
+    email:'',
+    telephone: 0,
+    password:'',
+    fonction:'',
+    id_categorie:-2,
+    img:'',
+  };
   constructor(private localstorage : LocalstorageService, private router : Router){
     this.user = this.localstorage.finduserByid(this.localstorage.getData('session'));
-    this.bienvenue = 'Salut Mr. '+this.user.nom
+    this.bienvenue = 'Salut Mr. '
   }
-  user! : user;
+ 
   title = 'idonko';
   profile! : string;
   autres! : string;

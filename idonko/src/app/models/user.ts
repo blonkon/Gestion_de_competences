@@ -8,5 +8,4 @@ export class user{
     fonction!:string;
     id_categorie!:number;
     img!:string;
-    
-}
+ }
