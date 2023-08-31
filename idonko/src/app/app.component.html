@@ -24,18 +24,18 @@
         </form>  
       </section>
       <section class="col-2 col-md-4 text-end">
-        <span class="me-3 d-none d-lg-inline-block" style="font-family: 'Inter';">{{profile_message}}</span>
-        <img [src]="profileImg" alt="profile" style="border-radius: 50%;width: 50px;height: 50px;" class="">
+        <span class="me-3 d-none d-lg-inline-block" style="font-family: 'Inter';">{{bienvenue}}</span>
+        <img [src]="'assets/'+user.img" alt="profile" style="border-radius: 50%;width: 50px;height: 50px;" class="">
       </section>
     </header>
   </main>
   <div id="maindiv">
     <nav class="sidebar col-1 ">
       <ul class="mt-1 mt-md-5 ">
-        <li class="pb-3 " ><img src="../assets/accueil_icon.png"  alt="" class="pe-3"><span class="sidebartext " > <a routerLink="" >Accueil</a> </span></li>
-        <li class="pb-3 "><img src="../assets/profile_icon.png" alt="" class="pe-3"><span class="sidebartext" ><a routerLink="profile" >Profile</a></span></li>
-        <li class="pb-3 "><img src="../assets/competences_icon.png" alt="" class="pe-3"><span class="sidebartext "><a routerLink="" >Competences</a></span></li>
-        <li class="pb-3 " ><img src="../assets/autres_icon.png" alt="" class="pe-3"><span class="sidebartext "  > <a routerLink="autres">Autres</a> </span></li>
+        <li class="pb-3 " ><img src="../assets/accueil_icon.png"  alt="" class="pe-3"><span class="sidebartext"><a  routerLink='' style="cursor: pointer;">Accueil</a> </span></li>
+        <li class="pb-3 "><img src="../assets/profile_icon.png" alt="" class="pe-3"><span class="sidebartext"><a (click)="routeclickprofile()" style="cursor: pointer;">Profile</a></span></li>
+        <li class="pb-3 "><img src="../assets/competences_icon.png" alt="" class="pe-3"><span class="sidebartext"><a style="cursor: pointer;">Competences</a></span></li>
+        <li class="pb-3 " ><img src="../assets/autres_icon.png" alt="" class="pe-3"><span class="sidebartext "><a (click)="routeclickautres()"  style="cursor: pointer;">Autres</a> </span></li>
       </ul>
     </nav>
     <div class="content mt-5 ">

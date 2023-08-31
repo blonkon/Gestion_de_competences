@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { user } from './models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,16 @@ export class LocalstorageService {
     if (dataString!=null) {
       return JSON.parse(dataString);
     }
+  }
+  removeData(key:string):any{
+    localStorage.removeItem(key);
+  }
+  finduserByid(id : number) :any{
+    for (const iterator of  this.getData('users') ) {
+      if (id===iterator.id) {
+        return iterator;
+      }
+    }
+   
   }
 }

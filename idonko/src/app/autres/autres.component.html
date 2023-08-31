@@ -44,11 +44,11 @@
                     <div *ngFor="let cardData of slideData" class="cards m-3" (click)="navigateToPage()" style="cursor: pointer;">
                       <div>
                         <div class="d-flex justify-content-center align-items-center p-3 cards_other">
-                          <img [src]="cardData.img" alt="" style="height: 64px; width: 64px; border-radius: 50%;">
+                          <img [src]="'../assets/' + cardData.img" alt="" style="height: 64px; width: 64px; border-radius: 50%;">
                         </div>
                         <div class="d-flex flex-column justify-content-center align-items-center">
-                          <h4>{{ cardData.name }}</h4>
-                          <p>{{ cardData.role }}</p>
+                          <h4>{{ cardData.nom }}</h4>
+                          <p>{{ cardData.fonction }}</p>
                         </div>
                       </div>
                     </div>

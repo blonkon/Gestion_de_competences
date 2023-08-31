@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalService } from '../global.service';
 import { Categories } from '../models/categories';
@@ -15,8 +15,7 @@ categories!:Categories[];
 
 
   constructor(private router:Router,private monService: GlobalService,private localstorage : LocalstorageService){
-    
-    this.carouselData=this.monService.carouselData;
+    this.carouselData=this.monService.carroureldata();
     this.categories=this.monService.categories;
     
   }

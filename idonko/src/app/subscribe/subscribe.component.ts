@@ -26,17 +26,29 @@ export class SubscribeComponent{
   validpassword:boolean=false;
   test:boolean=false;
   invalid:string='';
-
+  testemail:boolean = false;
+  user:user ={
+    id: 1,
+    nom: "",
+    prenom: "",
+    email: "",
+    telephone: 1234567890,
+    password: "",
+    fonction: "",
+    img :'',
+    id_categorie: -1
+  };
 
 
   constructor(private router:Router,private monService: GlobalService,private localstorage : LocalstorageService){
     
   }
 
-  categories = this.localstorage.getData('categorie')
+  categories = this.localstorage.getData('categories');
+  users:user[]=this.localstorage.getData('users');
   onSubmit(form : NgForm){
 
-       const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+     const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
      const regexNom = /^.{2,}$/;
      const regexPassorwd = /^.{8,}$/;
      const regexNumber =  /(^[4-9][0-9]{7}$)|(^2.{7}$)/;
@@ -44,13 +56,47 @@ export class SubscribeComponent{
      const regex1 = new RegExp(regexNom);
      const regex2 = new RegExp(regexPassorwd);
      const regex3 = new RegExp(regexNumber);
+     let id : number;
 
      if (regex.test(this.addemail) && regex1.test(this.addnom) && regex1.test(this.addprenom) && regex2.test(this.addpassword) && regex3.test(this.addtel)) {
 
-      if (this.addfonction!="-1" && this.addselffonction.length>1 ) {
+      if (this.addselffonction.length<1 ) {
         this.invalid='Emploi invalid';
       } else {
         this.invalid='';
+        if (this.users===undefined) {
+          id = 1;
+        }else{
+          id = this.users.length+1;
+        }
+
+        while (!this.validid(id,this.users)) {
+          id++;
+        }
+        for (const iterator of this.users) {
+          if (iterator.email===this.addemail) {
+            this.invalid='Email is present';
+            this.testemail=true
+          }
+        }
+        if (this.testemail===false) {
+          this.user.id=id;
+          this.user.nom=this.addnom;
+          this.user.prenom=this.addprenom;
+          this.user.telephone= JSON.parse( this.addtel);
+          this.user.email=this.addemail;
+          this.user.fonction=this.addselffonction;
+          this.user.id_categorie=JSON.parse(this.addfonction);
+          this.user.password=this.addpassword;
+          this.user.img='avatar1.jpg'
+         
+         
+          this.users.push(this.user);
+          this.localstorage.removeData('users');
+          this.localstorage.saveData('users',this.users);
+          this.router.navigate(["../login"]);
+        }
+       
       }
       
      } else {
@@ -108,6 +154,15 @@ onPasswordChange() {
   } else {
     this.validpassword=false    
   }
+}
+
+validid(id:number,userss : user[]){
+  for (const iterator of userss) {
+    if (id===iterator.id) {
+      return false;
+    }
+  }
+  return true;
 }
 
 }

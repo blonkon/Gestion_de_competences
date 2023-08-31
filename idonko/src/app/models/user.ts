@@ -4,7 +4,9 @@ export class user{
     prenom!:string;
     email!: string;
     telephone!: number;
+    password!:string;
     fonction!:string;
     id_categorie!:number;
+    img!:string;
     
 }

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { GlobalService } from '../global.service';
+import { ActivatedRoute, Route } from '@angular/router';
+import { LocalstorageService } from '../localstorage.service';
 
 @Component({
   selector: 'app-accueil',
@@ -6,6 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./accueil.component.scss']
 })
 export class AccueilComponent {
+
+  //id : number = this.localstorege.getData('session');
+
+ 
   //timer pour defiler 
   paragraphContent: string = 'Contenu initial';
   contents: string[] = ['Chez IDↃnko, chaque compétence devient une histoire de succès.',
@@ -24,4 +31,18 @@ export class AccueilComponent {
     this.paragraphContent = this.contents[this.currentIndex];
     this.currentIndex = (this.currentIndex + 1) % this.contents.length;
   }
+  constructor(private monservice : GlobalService,private localstorege : LocalstorageService){
+    
+  }
+
+  naturalstate(){
+      if (this.localstorege.getData('session')===undefined) {
+        return false;
+      } else{
+        return true;
+      }
+}
+deconnecter(){
+  this.localstorege.removeData('session');
+}
 }
