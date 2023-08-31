@@ -1,31 +1,50 @@
+<!-- Modal pour la selection d'images -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Selectionner une image</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Conteneur principal -->
 <div class="principal">
     <div class="container1">
         <div class="Profile">
             <img src="../assets/profile.jpg" alt="UserPhoto">
-            <i class="fa-solid fa-camera icon-camera"></i>
+            <i class="fa-solid fa-camera icon-camera"  data-bs-toggle="modal" data-bs-target="#exampleModal3"></i>
         </div>
-        <div class="title">
-            <h2>Développeur Full Stack</h2>
+        <div class="title" *ngFor="let user of user1">
+            <h2>{{user.metier}}</h2>
         </div>
-        <div class="userform">
+        <div class="userform" *ngFor="let user of user1">
                 <div class="row1">
-                    <div class="mb">
-                        <p>Nom de l'utilisateur</p>
+                    <div class="mb" >
+                        <p>{{user.nom}}</p>
                       </div>
                       
                     <div class="mb">
-                      <p>Prenom de l'utilisateur</p>
+                      <p>{{user.prenom}}</p>
                       </div>
                 </div>
                 
                 <div class="row2">
                     <div class="mb">
-                        <p>E-mail de l'utilisateur</p>
+                        <p>{{user.email}}</p>
                       </div>
               
                       <div class="mb">
-                        <p>Télephone de l'utilisateur</p>
+                        <p>{{user.telephone}}</p>
                       </div>
                 </div>
                 <div class="row3">
@@ -43,42 +62,15 @@
         <div class="form">
            <div class="list-comp">
             <ul class="list-group">
-                <li>Programmation java</li>
-                <li>HTML/CSS</li>
-                <li>JavaScript</li>
-                <li>Spring Boot</li>
-                <li>Base de données</li>
-                <li>Figma</li>
-                <li>Angular</li>
-                <li>Framework React</li>
+                <li *ngFor="let competence of comp1">{{competence.nom}}</li>
              </ul>
         </div>
 
 
         <div class="list-progres">
-          <div class="barre-progress">
-            <div class="progress" style="width: 80%;"></div>
-          </div>
-          <div class="barre-progress">
-            <div class="progress" style="width: 70%;"></div>
-          </div>
-          <div class="barre-progress">
-            <div class="progress" style="width: 65%;"></div>
-          </div>
-          <div class="barre-progress">
-            <div class="progress" style="width: 85;"></div>
-          </div>
-          <div class="barre-progress">
-            <div class="progress" style="width: 50%;"></div>
-          </div>
-          <div class="barre-progress">
-            <div class="progress"style="width: 60;"></div>
-          </div>
-          <div class="barre-progress">
-            <div class="progress"style="width: 85%;"></div>
-          </div>
-          <div class="barre-progress">
-            <div class="progress" style="width: 75%;"></div>
+          <div class="barre-progress" *ngFor="let competence of comp1">
+            <div class="progress" [style.width]="competence.niveau + '%'"
+            [attr.aria-valuenow]="competence.niveau" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
       </div>
@@ -115,7 +107,7 @@
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Veuillez remplir le champ</div>
           </div>
-          <button class="btnsave"  type="submit">Enregistrer</button>
+          <button class="btnsave"  type="submit" (click)="ajouterCompetence()">Enregistrer</button>
           <button class="btncancel" data-bs-dismiss="modal"type="submit">Annuler</button>
         </form>
     </div>

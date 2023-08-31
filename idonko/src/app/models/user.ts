@@ -4,5 +4,5 @@ export class user{
     prenom!:string;
     email!: string;
     telephone!: number;
-    listCompétence!: any[];
+    metier!: string
 }
