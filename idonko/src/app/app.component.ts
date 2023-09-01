@@ -12,8 +12,6 @@ import { user } from './models/user';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  bienvenue : string;
-  image :string='assets/';
   user : user={
     id:0,
     nom:'',
@@ -26,10 +24,11 @@ export class AppComponent {
     img:'',
   };
   constructor(private localstorage : LocalstorageService, private router : Router){
-    this.user = this.localstorage.finduserByid(this.localstorage.getData('session'));
-    this.bienvenue = 'Salut Mr. '
+    this.bienvenue=this.localstorage.getData('livenom');
+    this.image=this.localstorage.getData('liveimg');
   }
- 
+  bienvenue : string = this.localstorage.getData('livenom');
+  image :string = this.localstorage.getData('liveimg');
   title = 'idonko';
   profile! : string;
   autres! : string;

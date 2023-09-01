@@ -8,7 +8,6 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
 import { AutresComponent } from './autres/autres.component';
 
 const routes: Routes = [
-{path : 'accueil',component : AccueilComponent},
 {path : '',component : AccueilComponent},
 {path : 'autres', component : AutresComponent},
 {path : 'profile', component: UserProfileComponent },

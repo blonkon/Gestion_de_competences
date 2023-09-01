@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { GlobalService } from '../global.service';
 import { ActivatedRoute, Route } from '@angular/router';
 import { LocalstorageService } from '../localstorage.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-accueil',
@@ -31,7 +32,7 @@ export class AccueilComponent {
     this.paragraphContent = this.contents[this.currentIndex];
     this.currentIndex = (this.currentIndex + 1) % this.contents.length;
   }
-  constructor(private monservice : GlobalService,private localstorege : LocalstorageService){
+  constructor(private monservice : GlobalService,private localstorege : LocalstorageService,private appcom : AppComponent){
     
   }
 
@@ -43,6 +44,8 @@ export class AccueilComponent {
       }
 }
 deconnecter(){
+  this.localstorege.saveData('livenom','');
+  this.localstorege.saveData('liveimg','assets/profile.jpg')
   this.localstorege.removeData('session');
 }
 }
