@@ -27,8 +27,8 @@ export class AppComponent {
     this.bienvenue=this.localstorage.getData('livenom');
     this.image=this.localstorage.getData('liveimg');
   }
-  bienvenue : string = this.localstorage.getData('livenom');
-  image :string = this.localstorage.getData('liveimg');
+  bienvenue : string ;
+  image :string ;
   title = 'idonko';
   profile! : string;
   autres! : string;

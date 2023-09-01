@@ -33,7 +33,7 @@ export class LoginComponent {
         this.localstorage.saveData('liveimg','assets/'+iterator.img);
         this.appcomp.bienvenue='Salut Mr. '+iterator.nom;
         this.appcomp.image='assets/'+iterator.img
-        this.router.navigate(['']);
+        this.router.navigate([""]);
       }else{
         this.invalid="Invalid";
       }
