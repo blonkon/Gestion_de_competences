@@ -1,3 +1,23 @@
+//Pop-up image
+.image_container {
+    display: flex;
+    align-items: center; /* Centre les images horizontalement */
+}
+.image_container img {
+   /* Assure que les images ne dépassent pas la largeur de leur conteneur */
+    flex-wrap: wrap;
+    border-radius: 10px;
+    width: 20%;
+}
+
+.principal{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    width: 100%;
+    min-height: 100vh;
+}
+
 //Conteneur du gauche
 .container1{
 display: flex;
@@ -5,8 +25,8 @@ flex-direction: column;
 justify-content: flex-start;
 align-items: center;
 background: #d9d9d9;
-width: 44%;
-height: 44%;
+width: 40%;
+height: 605px;
 margin-left: 30px;
 border-radius: 50px;
 margin-right: 35px;
@@ -80,7 +100,6 @@ p{
     justify-content: center;
     margin-top: 45px;
     margin-bottom: 22px;
-    
 }
 .Profile{
     position: relative;
@@ -108,12 +127,9 @@ p{
 
 .bouton_ajout{
     background-color: #7d4ffe;
-    
-    
 }
 .bouton_modif{
     background-color: #7d4ffe;
-
 }
 .btnsave{
     background-color: #7d4ffe;
@@ -127,10 +143,18 @@ p{
 .container2{
 align-items: center;
 background: #d9d9d9;
-width: 44%;
-height: 44%;
+width: 50%;
+height: 605px;
+overflow: auto;
 border-radius: 50px;
-
+}
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(transparent, #7d4ffe);
+    border-radius: 20px;
+    height: 10px;
 }
 .skills h2{
     text-align: center;
@@ -150,20 +174,12 @@ li{
     margin: 10px;
    padding: 15px;
 }
-.principal{
-    display: flex;
-    flex-direction: row;
-    margin-left: 10px;
-   
-}
 
 .list-progres{
     display: grid;
     float: right;
     margin: 10px;
     padding: 15px;
-   
-
 }
 
 .form{
@@ -262,7 +278,6 @@ select{
 input::placeholder{
     text-align: center;
     color: #fff;
-    
 }
 h5{
     color: #7d4ffe;
