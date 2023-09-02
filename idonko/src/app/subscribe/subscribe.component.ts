@@ -94,7 +94,7 @@ export class SubscribeComponent{
           this.users.push(this.user);
           this.localstorage.removeData('users');
           this.localstorage.saveData('users',this.users);
-          this.router.navigate(["../ login"]);
+          this.router.navigate(["../login"]);
         }
        
       }

@@ -19,6 +19,7 @@ categories!:Categories[];
     this.categories=this.monService.categories;
     
   }
+  
   navigateToPage(){
     this.router.navigate(['../accueil']);
   }

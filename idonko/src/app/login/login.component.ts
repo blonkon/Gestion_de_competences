@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { GlobalService } from '../global.service';
 import { NgForm } from '@angular/forms';
 import { AppComponent } from '../app.component';
+import { AutresComponent } from '../autres/autres.component';
 
 @Component({
   selector: 'app-login',
@@ -33,6 +34,8 @@ export class LoginComponent {
         this.localstorage.saveData('liveimg','assets/'+iterator.img);
         this.appcomp.bienvenue='Salut Mr. '+iterator.nom;
         this.appcomp.image='assets/'+iterator.img
+        
+
         this.router.navigate([""]);
       }else{
         this.invalid="Invalid";
