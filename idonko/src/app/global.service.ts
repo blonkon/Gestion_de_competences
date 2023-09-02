@@ -3,12 +3,16 @@ import { Categories } from './models/categories';
 import { CardsData } from './models/CardsData';
 import { LocalstorageService } from './localstorage.service';
 import { user } from './models/user';
+import { competence } from './models/competence';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
   
+  comp:competence[]=[];
+  use! : user;
+
   addsession(id : number){
     this.localstorage.saveData('session',id)
   }
@@ -17,6 +21,10 @@ export class GlobalService {
   carouselData2 : user[][]=[];
 
   constructor(private localstorage: LocalstorageService) {
+    this.carouseltemp = [];
+  }
+  carroureldata(): any {
+
     this.carouselData1 = this.localstorage.getData('users'); // Assurez-vous que carouselData1 est correctement initialisé
     this.carouseltemp = [];
     let n=0;
@@ -41,10 +49,8 @@ export class GlobalService {
     this.carouseltemp.push(ligne);
   }
 
-
-  }
   
-  carroureldata(): any {
+
     let x = 0;
     let y = 0;
     for (const iterator of this.carouselData1) {
@@ -54,6 +60,7 @@ export class GlobalService {
         y = 0;
         x++;
       }
+     
     }
     return this.carouseltemp;
   }

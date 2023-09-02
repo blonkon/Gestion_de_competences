@@ -60,6 +60,7 @@ p{
     text-align: center;
     color: #fff;
     font-family: 'Lato';
+    margin-top: 10px;
     font-weight: bold;
     overflow-wrap: break-word;
 }
@@ -259,23 +260,6 @@ label{
     margin-bottom: 10px;
 }
 
-input{
-    border-radius: 10px;
-    padding-bottom: 10px;
-    border: none;
-    background-color: #7d4ffe;
-    color: #fff;
-    gap: 1;
-}
-select{
-    background-color: #7d4ffe;
-    color: #fff;
-    text-align: center;
-}
-input::placeholder{
-    text-align: center;
-    color: #fff;
-}
 h5{
     color: #7d4ffe;
     font-family: 'Lato';

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { GlobalService } from '../global.service';
 import { NgForm } from '@angular/forms';
 import { AppComponent } from '../app.component';
+import { AutresComponent } from '../autres/autres.component';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { AppComponent } from '../app.component';
 })
 export class LoginComponent {
   
-  constructor(private router:Router ,private monService: GlobalService ,private localstorage : LocalstorageService, private appcomp : AppComponent){ 
+  constructor(private router:Router ,private monService: GlobalService ,private localstorage : LocalstorageService, private appcomp : AppComponent,private autres : AutresComponent){ 
   }
  
 
@@ -31,6 +32,8 @@ export class LoginComponent {
         this.localstorage.removeData('liveimg');
         this.localstorage.saveData('livenom','Salut Mr. '+iterator.nom);
         this.localstorage.saveData('liveimg','assets/'+iterator.img);
+        this.autres.carouselData=this.monService.carroureldata();
+        this.autres.sessionid=iterator.id;
         this.appcomp.bienvenue='Salut Mr. '+iterator.nom;
         this.appcomp.image='assets/'+iterator.img
         this.router.navigate([""]);

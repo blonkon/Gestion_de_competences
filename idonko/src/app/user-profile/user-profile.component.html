@@ -28,30 +28,30 @@
 <div class="principal">
     <div class="container1">
         <div class="Profile">
-            <img src="../assets/profile.jpg" alt="UserPhoto">
+            <img [src]="'../assets/'+user1.img" alt="UserPhoto">
             <i class="fa-solid fa-camera icon-camera"  data-bs-toggle="modal" data-bs-target="#exampleModal3"></i>
         </div>
-        <div class="title" *ngFor="let user of user1">
-            <h2>{{user.fonction}}</h2>
+        <div class="title">
+            <h6 style="text-transform: capitalize;">{{user1.fonction}}</h6>
         </div>
-        <div class="userform" *ngFor="let user of user1">
+        <div class="userform">
                 <div class="row1">
                     <div class="mb" >
-                        <p>{{user.nom}}</p>
+                        <p>{{user1.nom}}</p>
                       </div>
                       
                     <div class="mb">
-                      <p>{{user.prenom}}</p>
+                      <p>{{user1.prenom}}</p>
                       </div>
                 </div>
                 
                 <div class="row2">
                     <div class="mb">
-                        <p>{{user.email}}</p>
+                        <p>{{user1.email}}</p>
                       </div>
               
                       <div class="mb">
-                        <p>{{user.telephone}}</p>
+                        <p>{{user1.telephone}}</p>
                       </div>
                 </div>
                 <div class="row3">
@@ -114,7 +114,7 @@
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Veuillez remplir le champ</div>
           </div>
-          <button class="btnsave"  type="submit" (click)="ajouterCompetence()">Enregistrer</button>
+          <button class="btnsave"  type="submit" >Enregistrer</button>
           <button class="btncancel" data-bs-dismiss="modal"type="submit">Annuler</button>
         </form>
     </div>

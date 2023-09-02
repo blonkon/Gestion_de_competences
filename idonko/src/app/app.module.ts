@@ -23,6 +23,7 @@ import {CardsData} from './models/CardsData';
 import { LoginComponent } from './login/login.component';
 import { SubscribeComponent } from './subscribe/subscribe.component'
 import {MatSelectModule} from '@angular/material/select';
+import { OtherUserComponent } from './other-user/other-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import {MatSelectModule} from '@angular/material/select';
     AutresComponent,
     LoginComponent,
     SubscribeComponent,
+    OtherUserComponent,
   ],
   imports: [
     BrowserModule,
