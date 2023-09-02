@@ -1,0 +1,19 @@
+<div class="list">
+  <div>
+    <h2>Catégories</h2>
+    <ul>
+      <li (click)="afficherToutesCompetences()">Toutes</li>
+      <li (click)="filterParCategorie('Programmation')">Programmation</li>
+      <li (click)="filterParCategorie('Base de données')">Base de données</li>
+      <li (click)="filterParCategorie('Réseaux et Sécurité')">Réseaux et Sécurité</li>
+    </ul>
+  </div>
+  
+  <div>
+    <h2>Compétences</h2>
+    <ul>
+      <li *ngFor="let competence of competencesFiltrees">{{ competence.nom }}</li>
+    </ul>
+  </div>
+</div>
+

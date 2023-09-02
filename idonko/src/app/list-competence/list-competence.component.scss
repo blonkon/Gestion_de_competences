@@ -1,0 +1,25 @@
+.container{
+   display: flex;
+//    flex-wrap: wrap;
+   width: 100%;
+   flex-direction: column;
+}
+.example-card{
+    width: 200px;
+    border-radius: 50px;
+}
+
+.c1{
+    display: flex;
+    gap: 100px;
+}
+
+.c2{
+    display: flex;
+    gap: 100px;
+}
+
+.c3{
+    display: flex;
+}
+
