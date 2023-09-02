@@ -15,8 +15,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { ListCompetenceComponent } from './list-competence/list-competence.component';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { IgxProgressBarModule } from "igniteui-angular";
 
 //I keep the new line
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDialogModule,
     MatSelectModule,
     MatCardModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    IgxProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
