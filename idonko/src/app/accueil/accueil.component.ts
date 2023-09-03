@@ -45,8 +45,8 @@ export class AccueilComponent {
 }
 deconnecter(){
   this.localstorege.saveData('livenom','');
-  this.localstorege.saveData('liveimg','assets/profile.jpg');
-  this.app.image='assets/profile.jpg';
+  this.localstorege.saveData('liveimg','assets/profile.png');
+  this.app.image='assets/profile.png';
   this.app.bienvenue='';
   this.localstorege.removeData('session');
 }

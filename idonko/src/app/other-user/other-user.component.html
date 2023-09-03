@@ -1,0 +1,58 @@
+
+  <!-- Conteneur principal -->
+  <div class="principal">
+      <div class="container1">
+          <div class="Profile">
+              <img [src]="'../assets/'+user1.img" alt="UserPhoto">
+          </div>
+          <div class="title">
+              <h6 style="text-transform: capitalize;">{{user1.fonction}}</h6>
+          </div>
+          <div class="userform">
+                  <div class="row1">
+                      <div class="mb" >
+                          <p>{{user1.nom}}</p>
+                        </div>
+                        
+                      <div class="mb">
+                        <p>{{user1.prenom}}</p>
+                        </div>
+                  </div>
+                  
+                  <div class="row2">
+                      <div class="mb">
+                          <p>{{user1.email}}</p>
+                        </div>
+                
+                        <div class="mb">
+                          <p>{{user1.telephone}}</p>
+                        </div>
+                  </div>
+  
+          </div>
+      </div>
+  
+  
+  <div class="container2">
+          <div class="skills">
+            <h2>Mes Compétences</h2>
+          </div>
+          <div class="form">
+             <div class="list-comp">
+              <ul class="list-group">
+                  <li *ngFor="let competence of comp1">{{competence.nom}}</li>
+               </ul>
+          </div>
+  
+  
+          <div class="list-progres">
+            <div class="barre-progress" *ngFor="let competence of comp1">
+              <div class="progress" [style.width]="competence.niveau + '%'"
+              [attr.aria-valuenow]="competence.niveau" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+ 

@@ -1,3 +1,9 @@
+@use "igniteui-angular/theming" as *;
+$custom-theme: progress-circular-theme(
+    $base-circle-color: lightgray,
+    $progress-circle-color:  #7D4FFE
+);
+@include progress-circular($custom-theme);
 .catbox{
     background-color: #d9d9d9;
     border-radius: 20px;
