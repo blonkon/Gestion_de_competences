@@ -90,58 +90,17 @@
 
 <div class="main">
   <div class="row1">
-    <div class="col1">
-      <div class="col11">
-        <div class="col123">
-          <p>Utilisateurs sont
-            compétants 
-            dans la programmation 
-          </p>
-          <igx-circular-bar
-            [value]="76"
-            [animate]="true"
-            class="custom-size">
-          </igx-circular-bar>
-        </div>
-        <div class="col124">
-          <p>Utilisateurs sont
-            compétants 
-            dans la programmation 
-          </p>
-          <igx-circular-bar
-            [value]="76"
-            [animate]="true"
-            class="custom-size">
-          </igx-circular-bar>
-        </div>
-      </div>
-      <div class="col12">
-        <p>Utilisateurs sont
-          compétants 
-          dans la programmation 
-        </p>
-        <igx-circular-bar
-          [value]="76"
-          [animate]="true"
-          class="custom-size">
-        </igx-circular-bar>
-      </div>
-    </div>
-    <div class="col2">
-      <h2>Compétences</h2>
     <ul>
-      <li *ngFor="let competence of competencesFiltrees">{{ competence.nom }}</li>
+      <li *ngFor="let competence of competencesFiltrees">{{ competence.nom }}<hr></li>
     </ul>
-      
-    </div>
   </div>
   <div class="row2">
-    <h2>Catégories</h2>
+    <h4>Catégories</h4>
     <ul>
-      <li (click)="afficherToutesCompetences()">Toutes</li>
-      <li (click)="filterParCategorie('Programmation')">Programmation</li>
-      <li (click)="filterParCategorie('Base de données')">Base de données</li>
-      <li (click)="filterParCategorie('Réseaux et Sécurité')">Réseaux et Sécurité</li>
+      <li (click)="afficherToutesCompetences()">Toutes<hr></li>
+      <li (click)="filterParCategorie('Programmation')">Programmation<hr></li>
+      <li (click)="filterParCategorie('Base de données')">Base de données<hr></li>
+      <li (click)="filterParCategorie('Réseaux et Sécurité')">Réseaux et Sécurité<hr></li>
     </ul>
   </div>
 </div>
