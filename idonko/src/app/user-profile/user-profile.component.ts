@@ -35,6 +35,7 @@ export class UserProfileComponent implements OnInit{
   ncompname!:string;
   nniveau!:number;
   invalid2:string="";
+  deleted:number=0;
   userchange :user={
     id:0,
     nom:'',
@@ -257,7 +258,15 @@ export class UserProfileComponent implements OnInit{
     }
     return true;
   }
-  delete(id:number){
+  setelement(id : number){
+    this.deleted=id;
+    console.log(id)
+  }
+  notdelete(){
+    this.deleted=0;
+  }
+  delete(){
+    let id=this.deleted;
     let comps : competence[]=[];
     console.log('ca marche')
     this.comp1=[];

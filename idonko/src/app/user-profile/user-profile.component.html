@@ -23,6 +23,20 @@
     </div>
   </div>
 </div>
+<!-- Modal for confirmation  -->
+<div class="modal fade cp2" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-align-center" id="exampleModalLabel">Voulez vous supprimer</h4>
+      </div>
+      <div class="d-flex" style="flex-direction: row; justify-content: center;margin-bottom: 20px; margin-left: 0px;">
+        <button class="" data-bs-dismiss="modal" (click)="delete()" style="margin-right: 5%; background-color:  #7d4ffe; color: white; padding: 15px;">Oui</button>
+        <button class="" data-bs-dismiss="modal" (click)="notdelete()" style="margin-left: 5%; background-color: rgba(3, 3, 3, 0); border:1px solid #7d4ffe;padding: 10px; color:  #7d4ffe;">Non</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Conteneur principal -->
 <div class="principal">
@@ -69,7 +83,7 @@
         <div class="form">
            <div class="list-comp">
             <ul class="list-group">
-                <li *ngFor="let competence of comp1" style="cursor: pointer;" (dblclick)="delete(competence.id)">{{competence.nom}}</li>
+                <li *ngFor="let competence of comp1" style="cursor: pointer;" (click)="setelement(competence.id)" data-bs-toggle="modal" data-bs-target="#exampleModal5">{{competence.nom}}</li>
              </ul>
         </div>
 
@@ -116,7 +130,7 @@
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Veuillez remplir le champ</div>
           </div>
-          <button class="btnsave"  type="submit" >Enregistrer</button>
+          <button class="btnsave" data-bs-dismiss="modal" type="submit" >Enregistrer</button>
           <button class="btncancel" data-bs-dismiss="modal" type="close">Annuler</button>
         </form>
     </div>
