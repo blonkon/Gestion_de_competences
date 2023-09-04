@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { SubscribeComponent } from './subscribe/subscribe.component'
 import {MatSelectModule} from '@angular/material/select';
 import { OtherUserComponent } from './other-user/other-user.component';
+import { ListCompetenceComponent } from './list-competence/list-competence.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { OtherUserComponent } from './other-user/other-user.component';
     LoginComponent,
     SubscribeComponent,
     OtherUserComponent,
+    ListCompetenceComponent
   ],
   imports: [
     BrowserModule,

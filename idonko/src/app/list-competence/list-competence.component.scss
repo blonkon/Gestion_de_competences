@@ -1,0 +1,135 @@
+@use "igniteui-angular/theming" as *;
+$custom-theme: progress-circular-theme(
+    $base-circle-color: lightgray,
+    $progress-circle-color:  #4D0CFF
+);
+@include progress-circular($custom-theme);
+.main{
+  display:flex;
+  padding-right:1%;
+  padding-left:1%;
+  justify-content:space-between;
+}
+*{
+  color:#000000;
+}
+.row1{
+  width:60%;
+  display:flex;
+  flex-direction:column;
+  overflow: auto;
+  height: 445px;
+}
+.row2{
+  background-color: #d9d9d9;;
+  border-radius:20px;
+  width:30%;
+  margin-right: 5%;
+  text-align:center;
+  height: 450px;
+}
+.row2 > h4{
+  text-align:center;
+  cursor: pointer;
+  color: #4D0CFF;
+  transition: 0.2s ease-out;
+}
+.row2 > h4:hover{
+    color: #fff;
+   
+}
+.col2{
+  background-color: #d9d9d9;;
+  height:200px;
+  border-radius:20px;
+  overflow: scroll;
+}
+.col2 >h1{
+  text-align:center;
+}
+.col1{
+  display:flex;
+  justify-content:space-between;
+  margin-top:1%;
+  margin-bottom:2%;
+}
+.col12{
+  background-color: #d9d9d9;;
+   border-radius:20px;
+  width:49%;
+  height:21Opx
+}
+.col12 > h1{
+  text-align:center;
+}
+.col11{
+  width:49%;
+  display:flex;
+  flex-direction:column;
+}
+.col123{
+   background-color: #d9d9d9;;
+   border-radius:20px;
+  height:100px;
+}
+.col124{
+   background-color: #d9d9d9;;
+   border-radius:20px;
+  height:100px;
+  margin-top:10px;
+}
+.col123 >h1{
+  text-align:center;
+}
+.col124 >h1{
+  text-align:center;
+}
+li{
+    transition: 0.2s ease-out;
+  width: 100%;
+  list-style:none;
+  overflow-wrap: break-word;
+  color: black;
+  margin-top: 2%;
+}
+.row1 > ul > li:hover{
+    color: #4D0CFF;
+}
+.row1 > ul > li >hr{
+    width: 90%;
+}
+.row1 > ul > li:hover >hr{
+    width: 45%;
+}
+hr{
+    width: 100%;
+    border: none;
+    height: 2px;
+    background-color: #4D0CFF;
+}
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(transparent, #7d4ffe);
+    border-radius: 20px;
+    height: 10px;
+}
+ul > li{
+    cursor: pointer;
+    text-align: left;
+}
+
+
+
+ul > li:hover{
+    color: #fff;
+       hr{
+    transition: 0.5s all;
+    width: 50%;
+    height: 4px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+}
+}

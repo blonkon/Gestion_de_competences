@@ -12,6 +12,7 @@
 @include theme($default-palette);
 // CSS Reset, comment out if not required or using a different module
 @import 'minireset.css/minireset';
+
 /* You can add global styles to this file, and also import other style files */
   @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700&family=Inter&family=Lato:wght@700&family=Lexend:wght@300&display=swap');
 ul, ol {

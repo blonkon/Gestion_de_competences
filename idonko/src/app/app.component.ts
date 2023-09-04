@@ -40,6 +40,13 @@ export class AppComponent {
        this.router.navigate(['profile']);
    }
  }
+ routeclickliste(){
+  if (this.localstorage.getData('session')===undefined) {
+    this.router.navigate(['']);
+  }else{
+    this.router.navigate(['liste']);
+}
+}
  routeclickautres(){
    if (this.localstorage.getData('session')===undefined) {
      this.router.navigate(['']);

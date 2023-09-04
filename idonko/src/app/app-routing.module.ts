@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { AutresComponent } from './autres/autres.component';
 import { OtherUserComponent } from './other-user/other-user.component';
+import { ListCompetenceComponent } from './list-competence/list-competence.component';
 
 const routes: Routes = [
 {path : '',component : AccueilComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
 {path : 'profile', component: UserProfileComponent },
 {path : 'login', component: LoginComponent },
 {path : 'subscribe', component: SubscribeComponent },
-{path : 'other', component: OtherUserComponent }
+{path : 'other', component: OtherUserComponent },
+{path : "liste", component: ListCompetenceComponent}, 
 ];
 
 @NgModule({

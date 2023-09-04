@@ -4,6 +4,14 @@ $custom-theme: progress-circular-theme(
     $progress-circle-color:  #7D4FFE
 );
 @include progress-circular($custom-theme);
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(transparent, #7d4ffe);
+    border-radius: 20px;
+    height: 10px;
+}
 .catbox{
     background-color: #d9d9d9;
     border-radius: 20px;
