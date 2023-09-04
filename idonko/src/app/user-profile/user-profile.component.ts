@@ -35,8 +35,6 @@ export class UserProfileComponent implements OnInit{
   ncompname!:string;
   nniveau!:number;
   invalid2:string="";
-  succes:string="";
-  succes2:string="";
   userchange :user={
     id:0,
     nom:'',
@@ -196,7 +194,6 @@ export class UserProfileComponent implements OnInit{
   this.ncategorie=-1;
   this.localstorage.removeData('users')
     this.localstorage.saveData('users',this.newusers2);
-    this.succes="Modifier avec succes"
     this.newusers2=[];
     if (this.redirection===true) {
       this.localstorage.saveData('livenom','');
@@ -204,13 +201,7 @@ export class UserProfileComponent implements OnInit{
       this.app.image='profile.png';
       this.app.bienvenue='';
       this.localstorage.removeData('session');
-      // this.modal.show();
-      // this.modal.hide();
-      // this.router.navigate(["../login"])
-    }else{
-      // this.modal.show();
-      // this.modal.hide();
-      // this.router.navigate(["profile"])
+       this.router.navigate(["../login"])
     }
   }
   onSubmit2(form2 : NgForm){
@@ -221,11 +212,16 @@ export class UserProfileComponent implements OnInit{
       niveau:0,
     };
     let id:number;
+    for (const iterator of this.localstorage.getData('competences')) {
+      if (iterator.id_user===this.localstorage.getData('session') && iterator.nom.toLowerCase()===this.ncompname.toLowerCase()) {
+        this.invalid2="Competence exitant";
+        return;
+      }
+    }
     if (this.ncompname.length <2) {
       this.invalid2="Nom invalid";
       return;
     }else{
-          this.succes2="Ajouter avec succes";
           comptemp.nom=this.ncompname;
           comptemp.niveau=this.nniveau;
           id=this.localstorage.getData('competences').length++;
@@ -260,6 +256,22 @@ export class UserProfileComponent implements OnInit{
       }
     }
     return true;
+  }
+  delete(id:number){
+    let comps : competence[]=[];
+    console.log('ca marche')
+    this.comp1=[];
+    for (const iterator of this.localstorage.getData('competences')) {
+      if (iterator.id===id) {
+        continue;
+      }
+      if (iterator.id_user===this.localstorage.getData('session')) {
+        this.comp1.push(iterator);
+      }
+      comps.push(iterator);
+    }
+    this.localstorage.removeData('competences');
+    this.localstorage.saveData('competences',comps);
   }
 
 }

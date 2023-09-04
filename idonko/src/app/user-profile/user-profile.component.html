@@ -7,18 +7,18 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="image_container">
-        <img src="/assets/cerre.png" (click)="sourcechange('cerre.png')" alt="avatar 1" style="cursor: pointer;">
-        <img src="/assets/chien.png" (click)="sourcechange('chien.png')" alt="avatar 2" style="cursor: pointer;">
-        <img src="/assets/mascot.png" (click)="sourcechange('mascot.png')" alt="avatar 3" style="cursor: pointer;">
-        <img src="/assets/sanglier.png" (click)="sourcechange('sanglier.png')" alt="avatar 4" style="cursor: pointer;">
-        <img src="/assets/renard.png" (click)="sourcechange('renard.png')" alt="avatar 5" style="cursor: pointer;">
+        <img src="/assets/cerre.png" (click)="sourcechange('cerre.png')" data-bs-dismiss="modal" alt="avatar 1" style="cursor: pointer;">
+        <img src="/assets/chien.png" (click)="sourcechange('chien.png')" data-bs-dismiss="modal" alt="avatar 2" style="cursor: pointer;">
+        <img src="/assets/mascot.png" (click)="sourcechange('mascot.png')" data-bs-dismiss="modal" alt="avatar 3" style="cursor: pointer;">
+        <img src="/assets/sanglier.png" (click)="sourcechange('sanglier.png')" data-bs-dismiss="modal" alt="avatar 4" style="cursor: pointer;">
+        <img src="/assets/renard.png" (click)="sourcechange('renard.png')" data-bs-dismiss="modal" alt="avatar 5" style="cursor: pointer;">
         </div>
       <div class="image_container">
-        <img src="/assets/lion.png" (click)="sourcechange('lion.png')" alt="avatar 6" style="cursor: pointer;">
-        <img src="/assets/girafe.png" (click)="sourcechange('girafe.png')" alt="avatar 7" style="cursor: pointer;">
-        <img src="/assets/ours polaire.png" (click)="sourcechange('ours polaire.png')" alt="avatar 8" style="cursor: pointer;">
-        <img src="/assets/perroquet.png" (click)="sourcechange('perroquet.png')" alt="avatar 9" style="cursor: pointer;">
-        <img src="/assets/ours.png" (click)="sourcechange('ours.png')" alt="avatar 10" style="cursor: pointer;">
+        <img src="/assets/lion.png" (click)="sourcechange('lion.png')" data-bs-dismiss="modal" alt="avatar 6" style="cursor: pointer;">
+        <img src="/assets/girafe.png" (click)="sourcechange('girafe.png')" data-bs-dismiss="modal" alt="avatar 7" style="cursor: pointer;">
+        <img src="/assets/ours polaire.png" (click)="sourcechange('ours polaire.png')" data-bs-dismiss="modal" alt="avatar 8" style="cursor: pointer;">
+        <img src="/assets/perroquet.png" (click)="sourcechange('perroquet.png')" data-bs-dismiss="modal" alt="avatar 9" style="cursor: pointer;">
+        <img src="/assets/ours.png" (click)="sourcechange('ours.png')" data-bs-dismiss="modal" alt="avatar 10" style="cursor: pointer;">
       </div>
     </div>
   </div>
@@ -69,7 +69,7 @@
         <div class="form">
            <div class="list-comp">
             <ul class="list-group">
-                <li *ngFor="let competence of comp1">{{competence.nom}}</li>
+                <li *ngFor="let competence of comp1" style="cursor: pointer;" (dblclick)="delete(competence.id)">{{competence.nom}}</li>
              </ul>
         </div>
 
@@ -97,7 +97,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <p style="color: red;">{{invalid2}}</p>
-      <p style="color: green;">{{succes2}}</p>
       <div class="modal-body">
         <form class="was-validated" (ngSubmit)="onSubmit2(b)" #b="ngForm">
           <div class="mb-3 mt-3">
@@ -134,7 +133,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <p style="color: red;">{{invalid}}</p>
-      <p style="color: green;">{{succes}}</p>
       <div>
         <form (ngSubmit)="onSubmit(a)" #a="ngForm">
           <div class="d-flex">
@@ -165,7 +163,7 @@
                 </div>
                 </div>
             <div class="bb">
-              <button type="submit" style="cursor: pointer;" class="save">Enregistrer</button>
+              <button type="submit" style="cursor: pointer;" data-bs-dismiss="modal" class="save">Enregistrer</button>
               <button type="button" data-bs-dismiss="modal" class="delete">Annuler</button>
             </div>
         </form>
