@@ -42,6 +42,7 @@
 <div class="principal">
     <div class="container1">
         <div class="Profile">
+          <p style="color: red;">{{invalid}}</p>
             <img [src]="'../assets/'+user1.img" alt="UserPhoto"  data-bs-toggle="modal" data-bs-target="#exampleModal3" style="cursor: pointer;">
             <i class="fa-solid fa-camera icon-camera"  data-bs-toggle="modal" data-bs-target="#exampleModal3" style="cursor: pointer;"></i>
         </div>
@@ -70,6 +71,7 @@
                 </div>
                 <div class="row3">
                     <button class="bouton_modif"data-bs-toggle="modal" data-bs-target="#exampleModal2" type="submit">Modifier mes coordonnées</button>
+                    
                 </div>
 
         </div>
@@ -95,7 +97,7 @@
           </div>
         </div>
       </div>
-
+      <p style="color: red;">{{invalid2}}</p>
         <div class="ajout">
           <button class="bouton_ajout" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter une compétence</button>
         </div>
@@ -110,7 +112,6 @@
         <h5 class="modal-title text costum text align" id="exampleModalLabel">AJOUTER UNE COMPETENCE</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <p style="color: red;">{{invalid2}}</p>
       <div class="modal-body">
         <form class="was-validated" (ngSubmit)="onSubmit2(b)" #b="ngForm">
           <div class="mb-3 mt-3">
@@ -146,7 +147,6 @@
         <h5 class="th5">Modifications personnelles</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <p style="color: red;">{{invalid}}</p>
       <div>
         <form (ngSubmit)="onSubmit(a)" #a="ngForm">
           <div class="d-flex">
@@ -170,7 +170,7 @@
               <div class="d-flex">
                 <div class="flex2">
                   <input type="text" name="fonction" [(ngModel)]="nfonction" placeholder="Entrer votre fonction">
-                  <select name="categorie" [(ngModel)]="ncategorie">
+                  <select name="categorie" [(ngModel)]="ncategorie" style="width: 40%;">
                     <option value="-1" selected></option>
                     <option *ngFor="let option of categories" [value]="option.id">{{ option.name }}</option>
                   </select>

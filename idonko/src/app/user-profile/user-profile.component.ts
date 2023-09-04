@@ -100,7 +100,7 @@ export class UserProfileComponent implements OnInit{
        this.invalid='';
        for (const iterator of this.localstorage.getData('users')) {
           if (iterator.email===this.nemail && iterator.id!=this.localstorage.getData('session')) {
-            this.invalid='Email is present';
+            this.invalid='Email present';
             return;
           }else{
             this.userchange.email=this.nemail ;
@@ -168,7 +168,7 @@ export class UserProfileComponent implements OnInit{
     }
   } else {
     if (this.cpassword!=undefined  && this.cpassword!="") {
-      this.invalid="Password invalid"
+      this.invalid="Password invalid";
     }
     this.userchange.password=usertemp.password;
     this.userchange.img=usertemp.img;
@@ -268,7 +268,7 @@ export class UserProfileComponent implements OnInit{
   delete(){
     let id=this.deleted;
     let comps : competence[]=[];
-    console.log('ca marche')
+    // console.log('ca marche')
     this.comp1=[];
     for (const iterator of this.localstorage.getData('competences')) {
       if (iterator.id===id) {
