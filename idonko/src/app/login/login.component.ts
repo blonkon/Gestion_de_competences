@@ -31,11 +31,11 @@ export class LoginComponent {
         this.localstorage.removeData('livenom');
         this.localstorage.removeData('liveimg');
         this.localstorage.saveData('livenom','Salut Mr. '+iterator.nom);
-        this.localstorage.saveData('liveimg','assets/'+iterator.img);
+        this.localstorage.saveData('liveimg',iterator.img);
         this.autres.carouselData=this.monService.carroureldata();
         this.autres.sessionid=iterator.id;
         this.appcomp.bienvenue='Salut Mr. '+iterator.nom;
-        this.appcomp.image='assets/'+iterator.img
+        this.appcomp.image=iterator.img
         
 
         this.router.navigate([""]);
