@@ -1,4 +1,4 @@
-import { Component, Injectable, Input, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit, ViewChild } from '@angular/core';
 import { user } from '../models/user';
 import { competence } from '../models/competence';
 import { LocalstorageService } from '../localstorage.service';
@@ -15,6 +15,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit{
+  @ViewChild('exampleModal2') modal: any;
   comp1!: competence[] ;
   user1: user=this.localstorage.finduserByid(this.localstorage.getData('session'));
   nouvelleCompetence: any;
@@ -31,6 +32,11 @@ export class UserProfileComponent implements OnInit{
   categories! : any[];
   invalid!:string;
   redirection:boolean=false;
+  ncompname!:string;
+  nniveau!:number;
+  invalid2:string="";
+  succes:string="";
+  succes2:string="";
   userchange :user={
     id:0,
     nom:'',
@@ -190,6 +196,7 @@ export class UserProfileComponent implements OnInit{
   this.ncategorie=-1;
   this.localstorage.removeData('users')
     this.localstorage.saveData('users',this.newusers2);
+    this.succes="Modifier avec succes"
     this.newusers2=[];
     if (this.redirection===true) {
       this.localstorage.saveData('livenom','');
@@ -197,9 +204,62 @@ export class UserProfileComponent implements OnInit{
       this.app.image='profile.png';
       this.app.bienvenue='';
       this.localstorage.removeData('session');
-      this.router.navigate(["../login"])
+      // this.modal.show();
+      // this.modal.hide();
+      // this.router.navigate(["../login"])
     }else{
-      this.router.navigate(["profile"])
+      // this.modal.show();
+      // this.modal.hide();
+      // this.router.navigate(["profile"])
     }
   }
+  onSubmit2(form2 : NgForm){
+    let comptemp : competence ={
+      id:0,
+      id_user:this.localstorage.getData('session'),
+      nom:"",
+      niveau:0,
+    };
+    let id:number;
+    if (this.ncompname.length <2) {
+      this.invalid2="Nom invalid";
+      return;
+    }else{
+          this.succes2="Ajouter avec succes";
+          comptemp.nom=this.ncompname;
+          comptemp.niveau=this.nniveau;
+          id=this.localstorage.getData('competences').length++;
+          if (this.validid(id,this.localstorage.getData('competences'))) {
+            comptemp.id=id
+          }else{
+            while (!this.validid(id,this.localstorage.getData('competences'))) {
+              id++;
+            }
+            comptemp.id=id;
+          }
+          let comps : competence[]=this.localstorage.getData('competences');
+          this.localstorage.removeData('competences');
+          comps.push(comptemp);
+          this.localstorage.saveData('competences',comps);
+          this.comp1=[];
+          for (const iterator of comps) {
+            if (iterator.id_user===this.localstorage.getData('session')) {
+              this.comp1.push(iterator);
+            }
+          }
+    }
+    this.invalid2='';
+    this.nniveau=-1;
+    this.ncompname='';
+  }
+
+  validid(id:number,userss : competence[]){
+    for (const iterator of userss) {
+      if (id===iterator.id) {
+        return false;
+      }
+    }
+    return true;
+  }
+
 }

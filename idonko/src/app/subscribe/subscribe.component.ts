@@ -47,7 +47,7 @@ export class SubscribeComponent{
   categories = this.localstorage.getData('categories');
   users:user[]=this.localstorage.getData('users');
   onSubmit(form : NgForm){
-
+    this.testemail=false;
      const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
      const regexNom = /^.{2,}$/;
      const regexPassorwd = /^.{8,}$/;
@@ -76,7 +76,8 @@ export class SubscribeComponent{
         for (const iterator of this.users) {
           if (iterator.email===this.addemail) {
             this.invalid='Email is present';
-            this.testemail=true
+            this.testemail=true;
+            
           }
         }
         if (this.testemail===false) {
@@ -89,8 +90,6 @@ export class SubscribeComponent{
           this.user.id_categorie=JSON.parse(this.addfonction);
           this.user.password=this.addpassword;
           this.user.img='avatar1.jpg'
-         
-         
           this.users.push(this.user);
           this.localstorage.removeData('users');
           this.localstorage.saveData('users',this.users);

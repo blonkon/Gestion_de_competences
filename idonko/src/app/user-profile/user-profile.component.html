@@ -96,26 +96,29 @@
         <h5 class="modal-title text costum text align" id="exampleModalLabel">AJOUTER UNE COMPETENCE</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <p style="color: red;">{{invalid2}}</p>
+      <p style="color: green;">{{succes2}}</p>
       <div class="modal-body">
-        <form class="was-validated">
+        <form class="was-validated" (ngSubmit)="onSubmit2(b)" #b="ngForm">
           <div class="mb-3 mt-3">
-            <input type="text" class="form-control" id="uname" placeholder="Entrer votre compétence" name="uname" required>
+            <input type="text" class="form-control" id="uname" placeholder="Entrer votre compétence" name="uname" [(ngModel)]="ncompname" required>
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Veuillez remplir le champ.</div>
           </div>
           <div class="mb-3">
-            <select class="form-select mt-3">
-              <option disabled selected value="">Veuillez choisir votre niveau</option>
-              <option>Niveau débutant</option>
-              <option>Niveau Intermédiare</option>
-              <option>Niveau Senior</option>
-              <option>Niveau Lead</option>
+            <select class="form-select mt-3" name="level" [(ngModel)]="nniveau">
+              <option disabled selected value="0">Veuillez choisir votre niveau</option>
+              <option value="0">Aucune notion</option>
+              <option value="25">Niveau débutant</option>
+              <option value="50">Niveau Intermédiare</option>
+              <option value="75">Niveau Senior</option>
+              <option value="90">Niveau Lead</option>
             </select>
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Veuillez remplir le champ</div>
           </div>
           <button class="btnsave"  type="submit" >Enregistrer</button>
-          <button class="btncancel" data-bs-dismiss="modal"type="submit">Annuler</button>
+          <button class="btncancel" data-bs-dismiss="modal" type="close">Annuler</button>
         </form>
     </div>
     </div>
@@ -131,6 +134,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <p style="color: red;">{{invalid}}</p>
+      <p style="color: green;">{{succes}}</p>
       <div>
         <form (ngSubmit)="onSubmit(a)" #a="ngForm">
           <div class="d-flex">
